@@ -25,4 +25,12 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('LoginCtrl', function ($scope) {
+  $scope.data = {};
+
+  $scope.login = function () {
+    console.log ('LOGIN --- User: ' + $scope.data.username + ' Pass: ' + $scope.data.password);
+  }
 });
