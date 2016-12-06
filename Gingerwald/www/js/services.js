@@ -3,34 +3,6 @@ angular.module('starter.services', [])
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
-
   return {
     all: function() {
       return chats;
@@ -47,4 +19,49 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.service('LoginService', function($q, $http) {
+  return {
+    loginUser: function(name, pw) {
+      var deferred = $q.defer();
+      var promise = deferred.promise;
+
+      var url = 'https://www.gingerwald.com/community/v2.1/api/getCommunityDetails.php?token=VRYsLhjqom93MPPPcfeaWwmb8S3hwS7rImoqS3OOVthP4BFApUPT1wIsW2UmSiFO'
+
+      var test = "ne";
+
+      /*$http ({
+        method: 'GET',
+        url: url,
+        success: function (data) {
+          console.log ('Success');
+          test = "success";
+        },
+        error: function (data) {
+          console.log ('Error');
+          test = "error";
+        }
+      });*/
+
+      $http.get (url).success(function () { test = "ja" });
+
+      console.log (test);
+
+      /*if (name == 'user' && pw == 'secret') {
+        deferred.resolve('Welcome ' + name + '!');
+      } else {
+        deferred.reject('Wrong credentials.');
+      }*/
+      promise.success = function(fn) {
+        promise.then(fn);
+        return promise;
+      }
+      promise.error = function(fn) {
+        promise.then(null, fn);
+        return promise;
+      }
+      return promise;
+    }
+  }
 });
