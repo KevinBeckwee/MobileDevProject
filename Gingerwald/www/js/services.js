@@ -32,7 +32,7 @@ angular.module('starter.services', [])
       //var userToken = 'VRYsLhjqom93MPPPcfeaWwmb8S3hwS7rImoqS3OOVthP4BFApUPT1wIsW2UmSiFO'; //token moet later nog uit de server gehaald worden adhv van de logingegevens
 
       //1. token aanvragen adhv van usernaam en wachtwoord (client_secret heb ik er vast ingezet)
-      var url = 'https://www.gingerwald.com/community/v2.1/authorization/oauth/token.php?grant_type=password&username=' + name + '&password=' + pw + '&client_id=GingerwaldUserApp13&client_secret=nO7mudLAY6w2CnNWEv0RNVjsRqfnsh8NYdc4Jpj3Z0PPTvbG1SGihD7w8YedIPtV';
+      /*var url = 'https://www.gingerwald.com/community/v2.1/authorization/oauth/token.php?grant_type=password&username=' + name + '&password=' + pw + '&client_id=GingerwaldUserApp13&client_secret=nO7mudLAY6w2CnNWEv0RNVjsRqfnsh8NYdc4Jpj3Z0PPTvbG1SGihD7w8YedIPtV';
 
       $http ({
         method: 'POST',
@@ -41,11 +41,11 @@ angular.module('starter.services', [])
         console.log (response);
       }, function errorCallback (response) {
         console.log (response);
-      });
+      });*/
 
       //2. indien de token opgehaald kan worden kan men inloggen en worden de gegevens van de gebruikers getoond glinkt aan zijn token
 
-      /*if (name == 'plantijn004@gingerwald.be' && pw == 'gingerjuice') {
+      if (name == 'plantijn004@gingerwald.be' && pw == 'gingerjuice') {
         deferred.resolve('Welcome ' + name + '!');
       } else {
         deferred.reject('Wrong credentials.');
@@ -58,7 +58,7 @@ angular.module('starter.services', [])
         promise.then(null, fn);
         return promise;
       }
-      return promise;*/
+      return promise;
     }
   }
 });
