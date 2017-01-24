@@ -1,14 +1,26 @@
 <ion-view view-title="Home">
     <ion-content class="padding">
-    	
-    	<a ng-href = "#/app/juiceoftheday">Foto van juice</a>
-    	<a ng-href = "#/app/buy">Foto van winkelkar</a>
-    	<a ng-href = "#/app/dashboard">Foto van grafiek</a>
-    	<a ng-href = "#/app/scanner">Foto van scanner</a>
+        <div class="home-page">
+            <h1><img src="img/logo.png"></h1>
+            <div class="home">
+        	   <div id="menu">
+                    <div>
+        	           <ion-button><a ng-href = "#/app/juiceoftheday"><img src="img/button.png"></a></ion-button>
+        	           <ion-button><a ng-href = "#/app/buy"><img src="img/shoptrolley.jpeg"</a></ion-button>
+                    </div>
+                    <div>
+        	           <ion-button><a ng-href = "#/app/dashboard"><img src="img/bord.png"</a></ion-button>
+        	           <ion-button><a ng-href = "#/app/scanner"><img src="img/tree.png"></a></ion-button>
+                    </div>
+                </div>
 
-    	<br>
-    	<p>Uw code: {{ userKey }}</p>
-    	<p>{{ credits }} credits beschikbaar</p>
-
+        	   <br>
+               <div id="usr">
+        	       <p>Uw code: {{ userKey }}</p>
+        	       <p>{{ credits }} credits beschikbaar</p>
+                   <img src="img/board.png">
+               </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
