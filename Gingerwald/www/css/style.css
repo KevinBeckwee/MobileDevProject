@@ -59,7 +59,6 @@ h1 img {
 @media screen and (max-width: 470px){
 	.home #menu {
 		width: 100%;
-		padding-left: 5px;
 	}
 
 	#usr {
@@ -94,3 +93,60 @@ h1 img {
 /*=======================================*/
 
 /*============= DASHBOARD ===============*/
+
+#dashboard-buttons {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+#dashboard-buttons button {
+	width: 20%;
+	height: 27px;
+	background-color: #C86D24;
+}
+
+#perWeek button, #perMonth button{
+	width: 18%;
+}
+
+#allTime {
+	padding-top: 10px;
+	font-size: 20px;
+}
+
+#graph {
+	margin-top: 10px;
+	padding-left: 10px;
+	background-image: url("/img/chalk.jpeg");
+	border-style: solid;
+	border-width: 6px;
+	border-color: #C86D24;
+	font-family: "Noteworthy";
+	color: #FFFFFF;
+}
+
+#graph h3, p {
+	font-family: "Noteworthy";
+	color: #FFFFFF;
+}
+
+#graphbutton {
+	text-align: center;
+	margin-top: 20px; 
+}
+
+#graphbutton button {
+	width: 40%;
+	height: 30px;
+	background-color: #FFFFFF;
+	font-family: "Noteworthy";
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+#graph li {
+	letter-spacing: 2px;
+	font-size: 16px;
+}
