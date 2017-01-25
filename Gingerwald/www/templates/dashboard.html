@@ -1,32 +1,33 @@
-<ion-view view-title="Dashboard {{ today  | date: 'dd/MM/yyyy' }}">
+<ion-view view-title="Dashboard">
     <ion-content class="padding">
 
-        <div id = "dashboard" style = "border: 1px solid blue">
+        <div id = "dashboard">
+
             <button ng-click = "showAllTimeData ()">Ever</button>
             <button ng-click = "showWeekData ()">Week</button>
             <button ng-click = "showMonthData ()">Month</button>
 
             <div id = "allTime">
-                Ever
+                <span>Altijd</span>
             </div>
 
             <div id = "perWeek" style = "display: none;">
-                <span ng-click = "subtractWeek ()">&#8656;</span>
-                {{ firstDayWeek | date: 'dd/MM' }} - {{ lastDayWeek | date: 'dd/MM' }}
-                <span ng-click = "addWeek ()">&#8658;</span>
+                <button ng-click = "subtractWeek ()"><</button>
+                    <span>{{ firstDayWeek | date: 'dd/MM' }} - {{ lastDayWeek | date: 'dd/MM' }}</span>
+                <button ng-click = "addWeek ()">></button>
             </div>
 
             <div id = "perMonth" style = "display: none;">
-                <span ng-click = "subtractMonth ()">&#8656;</span>
-                {{ firstDayMonth | date: 'dd/MM' }} - {{ lastDayMonth | date: 'dd/MM' }}
-                <span ng-click = "addMonth ()">&#8658;</span>
+                <button ng-click = "subtractMonth ()"><</button>
+                    <span>{{ firstDayMonth | date: 'dd/MM' }} - {{ lastDayMonth | date: 'dd/MM' }}</span>
+                <button ng-click = "addMonth ()">></button>
             </div>
 
-            <h3>Consumed shots:</h3>
+            <h3>Aantal gedronken shots:</h3>
             <p>{{ data.Shots.length }}</p>
 
             <ion-scroll id = "ingredients" zooming = "false" direction = "y" style = "height: 40vh;">
-                <h3>Ingredients: (g)</h3>
+                <h3>Ingredienten: (g)</h3>
                 <ul>
                     <li ng-repeat = "i in data.Ingredients track by $index">{{ i.Ingredient.Name }} 
                         <p style = "background-color: red" ng-style = "{ width: 75 + data.Ingredients[$index].Ingredient.Amount_g + 'px'}">{{ data.Ingredients[$index].Ingredient.Amount_g }}</p>
@@ -35,15 +36,15 @@
             </ion-scroll>
 
             <ion-scroll id = "nutrients" zooming = "false" direction = "y" style = "height: 40vh; display: none;">
-                <h3>Nutrients: (mg)</h3>
+                <h3>Voedingsstoffen: (mg)</h3>
                 <ul>
                     <li ng-repeat = "i in data.Nutrients track by $index">{{ i.Nutrient.Name }} 
                         <p style = "background-color: red" ng-style = "{ width: 75 + (data.Nutrients[$index].Nutrient.Amount_g * 1000) + 'px'}">{{ data.Nutrients[$index].Nutrient.Amount_g * 1000 | number: 4 }}</p>
                     </li>
                 </ul>
             </ion-scroll>
-            <button ng-click = "showIngredients ()">Ingredients</button>
-            <button ng-click = "showNutrients ()">Nutrients</button>
+            <button ng-click = "showIngredients ()">Ingredienten</button>
+            <button ng-click = "showNutrients ()">Voedingsstoffen</button>
         </div>
 
     </ion-content>

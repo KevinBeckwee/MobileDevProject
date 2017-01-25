@@ -1,12 +1,24 @@
 /* Empty. Add your own CSS if you like */
 
+/*=============== FULL APP =====================*/
+
+ion-view {
+	background-image: url("/img/bos2.png");
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.padding {
+	padding: 0;
+}
+
 /*=============== HOME =====================*/
 
-.home-page {
+/*.home-page {
 	background-image: url("/img/bos2.png");
 	height: 90vh;
 	background-attachment: fixed;
-}
+}*/
 
 #menu {
 	margin: auto;

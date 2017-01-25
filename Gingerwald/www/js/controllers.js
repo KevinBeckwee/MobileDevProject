@@ -17,9 +17,16 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller ("StartCtrl", function ($scope, StartService) {
-	$scope.userKey = 666;
-	$scope.credits = 0;
+.controller ("UserCtrl", function ($scope, UserService) {
+
+	$scope.token = UserService.getToken ();
+	$scope.details = UserService.getUserDetails ($scope.token); //All the user's info is in here
+
+	$scope.details.then (function (data) {
+		$scope.userDetails = data;
+	}, function (reason) {
+		alert (reason);
+	});
 })
 
 .controller ("DashboardCtrl", function ($scope, $filter, UserService, DashboardService, DateService) {
@@ -74,7 +81,6 @@ angular.module('starter.controllers', [])
 		$scope.getuserDashboard (DateService.formatDate ($scope.firstDayMonth), DateService.formatDate ($scope.lastDayMonth));
 	};
 
-	//Onderstaande functies zijn tijdelijk, ik zal waarschijnlijk niet op die manier met de DOM werken
 	$scope.showAllTimeData = function () {
 		$scope.DOM.allTime.style.display = "block";
 		$scope.DOM.perWeek.style.display = "none";
@@ -97,14 +103,11 @@ angular.module('starter.controllers', [])
 	};
 
 	$scope.showIngredients = function () {
-		//TIJDELIJK ZO, LATER VIA STYLE LATEN AANPASSEN EN EEN CSS DING MAKEN EN VISIBLE OP NONE ZET
-		//EVENTUEEL OOK MET VIEWS WERKEN
 		$scope.DOM.ingredients.style.display = "block";
 		$scope.DOM.nutrients.style.display = "none";
 	};
 
 	$scope.showNutrients = function () {
-		//TIJDELIJK ZO, LATER VIA STYLE LATEN AANPASSEN EN EEN CSS DING MAKEN EN VISIBLE OP NONE ZET
 		$scope.DOM.nutrients.style.display = "block";
 		$scope.DOM.ingredients.style.display = "none";
 	};

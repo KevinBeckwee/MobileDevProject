@@ -1,9 +1,5 @@
 angular.module('starter.services', [])
 
-.service ('StartService', function ($http, $q) {
-	//hier moet nog code komen die de userKey en de credits kan verkrijgen
-})
-
 .service ('UserService', function ($http, $q) {
 
 	var userToken = "VRYsLhjqom93MPPPcfeaWwmb8S3hwS7rImoqS3OOVthP4BFApUPT1wIsW2UmSiFO";
@@ -36,6 +32,26 @@ angular.module('starter.services', [])
 
 		getToken : function () {
 			return userToken;
+		},
+
+		getUserDetails : function (token) {
+			var deferred = $q.defer ();
+			var url = 'https://www.gingerwald.com/community/v2.1/api/getUserDetails.php?token=' + token;
+      		
+			/**/console.log ("Getting userdetails from user with token " + token + ".");
+
+      		$http({
+      			method: 'GET',
+        		url: url
+        	})
+      		.success (function (data, status, headers, config) {
+        		deferred.resolve (data);
+		    })
+		    .error (function (data, status, headers, config) {
+		    	deferred.reject (status);
+		    });
+
+			return deferred.promise;
 		},
 	}
 })

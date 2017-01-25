@@ -16,8 +16,9 @@
 
         	   <br>
                <div id="usr">
-        	       <p>Uw code: {{ userKey }}</p>
-        	       <p>{{ credits }} credits beschikbaar</p>
+        	       <p>Uw code: {{ userDetails.User.Login }}</p>
+        	       <p ng-if = "userDetails.User.NumberCredits == 1">{{ userDetails.User.NumberCredits }} credit beschikbaar</p> <!-- Toont 'credit' als er maar 1 is -->
+                   <p ng-if = "userDetails.User.NumberCredits != 1">{{ userDetails.User.NumberCredits }} credits beschikbaar</p> <!-- Toont 'credits' als er meerdere zijn -->
                    <img src="img/board.png">
                </div>
             </div>

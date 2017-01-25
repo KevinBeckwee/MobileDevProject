@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     views: {
       'menuContent': {
         templateUrl: 'templates/startmenu.html',
-        controller: 'StartCtrl'
+        controller: 'UserCtrl'
       }
     }
   })
