@@ -1,12 +1,17 @@
 <ion-view view-title="Scanner">
     <ion-content class="padding">
-    	
-    	<button ng-click = "scanBarcode ()">Scan</button><br><br>
 
-    	<p>Bottle Token: {{ bottleToken }} | Juice Id: {{ juiceId }}</p><br>
+      <div id="scannerButtons" class="w3-container">
 
-		<button id = "addButton" ng-click = "addShot ()" disabled>Add Shot</button><br>
-    	<button id = "cancelButton" ng-click = "cancelShot ()" disabled>Cancel</button>
+
+    	<button  id="scanButton"class="button button-assertive" ng-click = "scanBarcode ()">Scan</button><br><br>
+
+    	<p>Bottle Token: {{ bottleToken }}</p><br>
+      <p>Juice Id: {{ juiceId }}</p><br>
+
+		  <button id = "addButton" class="button button-assertive" ng-click = "addShot ()" disabled>Add Shot</button>
+    	<button id = "cancelButton" class="button button-assertive" ng-click = "cancelShot ()" disabled>Cancel</button>
+
 
     	<p>Ingredienten:</p>
     	<ul>
@@ -17,6 +22,7 @@
     	<ul>
     		<li ng-repeat = "n in nutrients">{{ n.Nutrient.Name}}: {{ n.Nutrient.Amount_g * 1000 | number: 4 }} mg</li>
     	</ul>
-		
+      </div>
+
     </ion-content>
 </ion-view>
