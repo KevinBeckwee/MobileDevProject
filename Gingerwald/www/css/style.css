@@ -72,7 +72,8 @@ h1 img {
 
 #usr {
 	margin: auto;
-	margin-top: 15px;
+	margin-top: 1rem;
+	padding: 1rem;
 	width: 100%;
 	color: #422919;
 	font-family: "Noteworthy";
@@ -81,16 +82,8 @@ h1 img {
 	text-align: center;
 	position: absolute;
 	z-index: 1;
-}
-
-#usr img {
-	border-style: none;
-	margin-top: -75px;
-	margin-left: -150px;
-	width: 300px;
-	height: 100px;
-	position: absolute;
-	z-index: -1;
+	background-image: url("../img/board.png");
+	background-size: 100% 100%;
 }
 
 /*=======================================*/
@@ -111,10 +104,13 @@ h1 img {
 }
 
 #dashboard-buttons .navigateButton {
+	font-weight: bold;
+	font-size: 20px;
 	width: auto;
 	height: auto;
-	margin: -0.5rem 0;
-	border-radius: 50%;
+	margin: -0.5rem 0; /*Moet hierin blijven, anders gaat de witte balk (achtergrond) een andere grootte aannemen dan bij allTime*/
+	border: 0;
+	background-color: transparent;
 }
 
 #allTime, #perWeek, #perMonth {
@@ -127,6 +123,7 @@ h1 img {
 	margin-top: 10px;
 	padding-left: 10px;
 	background-image: url("../img/chalk.jpeg");
+	background-size: auto 100%;
 	border-style: solid;
 	border-width: 6px;
 	border-color: #C86D24;
@@ -165,4 +162,16 @@ h1 img {
 
 #graph li p {
 	margin: auto;
+}
+
+#ingredients p {
+	border-radius: 2px;
+	background-color: green; 
+	max-width: 98%;
+}
+
+#nutrients p {
+	border-radius: 2px;
+	background-color: #FF5410; 
+	max-width: 98%;
 }
