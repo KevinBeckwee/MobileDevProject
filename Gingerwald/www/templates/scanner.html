@@ -9,14 +9,18 @@
     	<button id = "cancelButton" ng-click = "cancelShot ()" disabled>Cancel</button>
 
     	<p>Ingredienten:</p>
-    	<ul>
-    		<li ng-repeat = "i in ingredients">{{ i.Ingredient.Name}}: {{ i.Ingredient.Amount_g }} g</li>
-    	</ul>
+    	<ion-scroll zooming = "false" direction = "y" style = "height: 20vh;">
+	    	<ul>
+	    		<li ng-repeat = "i in ingredients">{{ i.Ingredient.Name}}: {{ i.Ingredient.Amount_g }} g</li>
+	    	</ul>
+    	</ion-scroll>
 
     	<p>Voedinsstoffen:</p>
-    	<ul>
-    		<li ng-repeat = "n in nutrients">{{ n.Nutrient.Name}}: {{ n.Nutrient.Amount_g * 1000 | number: 4 }} mg</li>
-    	</ul>
+    	<ion-scroll zooming = "false" direction = "y" style = "height: 20vh;">
+	    	<ul>
+	    		<li ng-repeat = "n in nutrients">{{ n.Nutrient.Name}}: {{ n.Nutrient.Amount_g * 1000 | number: 4 }} mg</li>
+	    	</ul>
+		</ion-scroll>
 		
     </ion-content>
 </ion-view>
