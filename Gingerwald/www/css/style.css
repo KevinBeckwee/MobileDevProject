@@ -6,7 +6,7 @@
 /*=============== FULL APP =====================*/
 
 ion-view {
-	background-image: url("../img/bos2.png");
+	background-image: url("../img/wood.png");
 	background-size: 100% 100%;
     /*background-repeat: no-repeat;*/
 }
@@ -14,6 +14,7 @@ ion-view {
 .padding {
 	padding: 0;
 }
+
 
 /*=============== HOME =====================*/
 
@@ -133,14 +134,14 @@ h1 img {
 	color: #FFFFFF;
 }
 
-#graph h3, p {
+#graph h3 {
 	font-family: "Noteworthy";
 	color: #FFFFFF;
 }
 
 #graphbutton {
 	text-align: center;
-	margin-top: 20px; 
+	margin-top: 20px;
 }
 
 #graphbutton button {
@@ -168,12 +169,44 @@ h1 img {
 
 #ingredients p {
 	border-radius: 2px;
-	background-color: green; 
+	background-color: green;
 	max-width: 98%;
 }
 
 #nutrients p {
 	border-radius: 2px;
-	background-color: #FF5410; 
+	background-color: #FF5410;
 	max-width: 98%;
+}
+
+/*Scanner CSS */
+
+#scanButton{
+width: 30%;
+position: relative;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin-right: 20%;
+}
+
+#cancelButton{
+	margin-right : 10%;
+
+}
+
+#scannerButtons{
+	width: 80%;
+	text-align: center;
+	white-space: pre-wrap;
+	margin-left: 10%;
+	font-size: 200%;
+	color: #FFFFFF;
+	background-image: url("../img/chalk.jpeg");
+}
+
+#addButton{
+	margin-top: 8%;
+	float: right;
+	margin-right: 10%;
 }
