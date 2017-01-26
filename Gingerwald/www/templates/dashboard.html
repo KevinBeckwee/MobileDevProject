@@ -30,23 +30,28 @@
                 <h3>Aantal gedronken shots:</h3>
                 <p>{{ data.Shots.length }}</p>
 
-                <ion-scroll id = "ingredients" zooming = "false" direction = "y" style = "height: 50vh;">
-                    <h3>Ingredienten: (g)</h3>
-                    <ul>
-                        <li ng-repeat = "i in data.Ingredients track by $index">{{ i.Ingredient.Name }} 
-                            <p ng-style = "{ width: 75 + data.Ingredients[$index].Ingredient.Amount_g + 'px'}">{{ data.Ingredients[$index].Ingredient.Amount_g }}</p>
-                        </li>
-                    </ul>
-                </ion-scroll>
+                <div id = "ingredients">
+                <h3>Ingredienten: (g)</h3>
+                    <ion-scroll id = "ingredients" zooming = "false" direction = "y" style = "height: 40vh;">
+                        <ul>
+                            <li ng-repeat = "i in data.Ingredients track by $index">{{ i.Ingredient.Name }} 
+                                <p ng-style = "{ width: 75 + data.Ingredients[$index].Ingredient.Amount_g + 'px'}">{{ data.Ingredients[$index].Ingredient.Amount_g }}</p>
+                            </li>
+                        </ul>
+                    </ion-scroll>
+                </div>
 
-                <ion-scroll id = "nutrients" zooming = "false" direction = "y" style = "height: 50vh; display: none;">
+                <div id = "nutrients" style = "display: none;">
                     <h3>Voedingsstoffen: (mg)</h3>
-                    <ul>
-                        <li ng-repeat = "i in data.Nutrients track by $index">{{ i.Nutrient.Name }} 
-                            <p ng-style = "{ width: 75 + (data.Nutrients[$index].Nutrient.Amount_g * 1000) + 'px'}">{{ data.Nutrients[$index].Nutrient.Amount_g * 1000 | number: 4 }}</p>
-                        </li>
-                    </ul>
-                </ion-scroll>
+                    <ion-scroll zooming = "false" direction = "y" style = "height: 40vh;">
+                        <ul>
+                            <li ng-repeat = "i in data.Nutrients track by $index">{{ i.Nutrient.Name }} 
+                                <p ng-style = "{ width: 75 + (data.Nutrients[$index].Nutrient.Amount_g * 1000) + 'px'}">{{ data.Nutrients[$index].Nutrient.Amount_g * 1000 | number: 4 }}</p>
+                            </li>
+                        </ul>
+                    </ion-scroll>
+                </div>
+
                 <div id="graphbutton">
                     <button ng-click = "showIngredients ()">INGREDIENTEN</button>
                     <button ng-click = "showNutrients ()">VOEDINGSSTOFFEN</button>

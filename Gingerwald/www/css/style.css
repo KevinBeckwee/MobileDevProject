@@ -110,6 +110,7 @@ h1 img {
 	width: auto;
 	height: auto;
 	margin: -0.5rem 0; /*Moet hierin blijven, anders gaat de witte balk (achtergrond) een andere grootte aannemen dan bij allTime*/
+	padding: 0 1rem;
 	border: 0;
 	background-color: transparent;
 }
