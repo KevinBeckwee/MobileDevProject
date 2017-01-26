@@ -13,15 +13,15 @@
                 </div>
 
                 <div id = "perWeek" style = "display: none;">
-                    <button ng-click = "subtractWeek ()"><</button>
+                    <button class = "navigateButton" ng-click = "subtractWeek ()"><</button>
                         <span>{{ firstDayWeek | date: 'dd/MM' }} - {{ lastDayWeek | date: 'dd/MM' }}</span>
-                    <button ng-click = "addWeek ()">></button>
+                    <button class = "navigateButton" ng-click = "addWeek ()">></button>
                 </div>
 
                 <div id = "perMonth" style = "display: none;">
-                    <button ng-click = "subtractMonth ()"><</button>
+                    <button class = "navigateButton" ng-click = "subtractMonth ()"><</button>
                         <span>{{ firstDayMonth | date: 'dd/MM' }} - {{ lastDayMonth | date: 'dd/MM' }}</span>
-                    <button ng-click = "addMonth ()">></button>
+                    <button class = "navigateButton" ng-click = "addMonth ()">></button>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                     <h3>Ingredienten: (g)</h3>
                     <ul>
                         <li ng-repeat = "i in data.Ingredients track by $index">{{ i.Ingredient.Name }} 
-                            <p style = "background-color: green" ng-style = "{ width: 75 + data.Ingredients[$index].Ingredient.Amount_g + 'px'}">{{ data.Ingredients[$index].Ingredient.Amount_g }}</p>
+                            <p style = "background-color: green; max-width: 98%" ng-style = "{ width: 75 + data.Ingredients[$index].Ingredient.Amount_g + 'px'}">{{ data.Ingredients[$index].Ingredient.Amount_g }}</p>
                         </li>
                     </ul>
                 </ion-scroll>
@@ -43,13 +43,13 @@
                     <h3>Voedingsstoffen: (mg)</h3>
                     <ul>
                         <li ng-repeat = "i in data.Nutrients track by $index">{{ i.Nutrient.Name }} 
-                            <p style = "background-color: #FF5410" ng-style = "{ width: 75 + (data.Nutrients[$index].Nutrient.Amount_g * 1000) + 'px'}">{{ data.Nutrients[$index].Nutrient.Amount_g * 1000 | number: 4 }}</p>
+                            <p style = "background-color: #FF5410; max-width: 98%" ng-style = "{ width: 75 + (data.Nutrients[$index].Nutrient.Amount_g * 1000) + 'px'}">{{ data.Nutrients[$index].Nutrient.Amount_g * 1000 | number: 4 }}</p>
                         </li>
                     </ul>
                 </ion-scroll>
                 <div id="graphbutton">
-                    <button ng-click = "showIngredients ()">Ingredienten</button>
-                    <button ng-click = "showNutrients ()">Voedingsstoffen</button>
+                    <button ng-click = "showIngredients ()">INGREDIENTEN</button>
+                    <button ng-click = "showNutrients ()">VOEDINGSSTOFFEN</button>
                 </div>
             </div>
         </div>

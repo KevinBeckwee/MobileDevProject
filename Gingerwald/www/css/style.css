@@ -1,9 +1,12 @@
 /* Empty. Add your own CSS if you like */
 
+/*=============== MENU BAR =====================*/
+
+
 /*=============== FULL APP =====================*/
 
 ion-view {
-	background-image: url("/img/bos2.png");
+	background-image: url("../img/bos2.png");
 	background-size: 100% 100%;
     /*background-repeat: no-repeat;*/
 }
@@ -107,19 +110,23 @@ h1 img {
 	background-color: #C86D24;
 }
 
-#perWeek button, #perMonth button{
-	width: 18%;
+#dashboard-buttons .navigateButton {
+	width: auto;
+	height: auto;
+	margin: -0.5rem 0;
+	border-radius: 50%;
 }
 
-#allTime {
+#allTime, #perWeek, #perMonth {
 	padding-top: 10px;
 	font-size: 20px;
 }
 
 #graph {
+	text-align: center;
 	margin-top: 10px;
 	padding-left: 10px;
-	background-image: url("/img/chalk.jpeg");
+	background-image: url("../img/chalk.jpeg");
 	border-style: solid;
 	border-width: 6px;
 	border-color: #C86D24;
@@ -138,9 +145,14 @@ h1 img {
 }
 
 #graphbutton button {
-	width: 40%;
-	height: 30px;
-	background-color: #FFFFFF;
+	width: 45%;
+	padding: 1rem;
+	margin: 1%;
+	font-size: 80%;
+	background-color: rgba(89, 89, 89, 0.80);
+	border-radius: 2px;
+	color: #e2e2e2;
+	border: 0;
 	font-family: "Noteworthy";
 	letter-spacing: 1px;
 	font-weight: bold;
@@ -149,4 +161,8 @@ h1 img {
 #graph li {
 	letter-spacing: 2px;
 	font-size: 16px;
+}
+
+#graph li p {
+	margin: auto;
 }
