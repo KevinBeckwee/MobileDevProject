@@ -188,15 +188,20 @@ text-align: center;
 text-decoration: none;
 display: inline-block;
 margin-right: 20%;
+background-image: url("../img/chalk.jpeg");
 }
 
 #cancelButton{
 	margin-right : 10%;
+	font-size: 80%;
+	margin-left: auto;
+	margin-right: auto;
 
 }
 
 #scannerButtons{
 	width: 80%;
+
 	text-align: center;
 	white-space: pre-wrap;
 	margin-left: 10%;
@@ -206,7 +211,12 @@ margin-right: 20%;
 }
 
 #addButton{
-	margin-top: 8%;
-	float: right;
-	margin-right: 10%;
+	margin-top: 7%;
+	margin-left: auto;
+	margin-right: auto;
+
+	#qrImage{}
+
+
+
 }

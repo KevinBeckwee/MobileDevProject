@@ -2,26 +2,28 @@
     <ion-content class="padding">
 
       <div id="scannerButtons" class="w3-container">
+        <div id="qrImage">
+            <img src="img/qrscanner.png" ng-click="scanBarcode()" >
+        </div>
 
-
-    	<button  id="scanButton"class="button button-assertive" ng-click = "scanBarcode ()">Scan</button><br><br>
-
-    	<p>Bottle Token: {{ bottleToken }}</p><br>
-      <p>Juice Id: {{ juiceId }}</p><br>
 
 		  <button id = "addButton" class="button button-assertive" ng-click = "addShot ()" disabled>Add Shot</button>
     	<button id = "cancelButton" class="button button-assertive" ng-click = "cancelShot ()" disabled>Cancel</button>
 
+      <div class="list">
+        <p>Bottle Token: {{ bottleToken }}</p>
+        <p>Juice Id: {{ juiceId }}</p>
 
-    	<p>Ingredienten:</p>
-    	<ul>
-    		<li ng-repeat = "i in ingredients">{{ i.Ingredient.Name}}: {{ i.Ingredient.Amount_g }} g</li>
-    	</ul>
+        <p>Ingredienten:</p>
+        <ul>
+          <li ng-repeat = "i in ingredients">{{ i.Ingredient.Name}}: {{ i.Ingredient.Amount_g }} g</li>
+        </ul>
 
-    	<p>Voedinsstoffen:</p>
-    	<ul>
-    		<li ng-repeat = "n in nutrients">{{ n.Nutrient.Name}}: {{ n.Nutrient.Amount_g * 1000 | number: 4 }} mg</li>
-    	</ul>
+        <p>Voedinsstoffen:</p>
+        <ul>
+          <li ng-repeat = "n in nutrients">{{ n.Nutrient.Name}}: {{ n.Nutrient.Amount_g * 1000 | number: 4 }} mg</li>
+        </ul>
+        </div>
       </div>
 
     </ion-content>
