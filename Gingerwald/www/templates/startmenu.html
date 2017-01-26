@@ -1,0 +1,27 @@
+<ion-view view-title="Home">
+    <ion-content class="padding">
+        <div class="home-page">
+            <h1><img src="img/logo.png"></h1>
+            <div class="home">
+        	   <div id="menu">
+                    <div>
+        	           <ion-button><a ng-href = "#/app/juiceoftheday"><img src="img/button.png"></a></ion-button>
+        	           <ion-button><a ng-href = "#/app/buy"><img src="img/shoptrolley.jpeg"</a></ion-button>
+                    </div>
+                    <div>
+        	           <ion-button><a ng-href = "#/app/dashboard"><img src="img/bord.png"</a></ion-button>
+        	           <ion-button><a ng-href = "#/app/scanner"><img src="img/tree.png"></a></ion-button>
+                    </div>
+                </div>
+
+        	   <br>
+               <div id="usr">
+        	       <p>Uw code: {{ userDetails.User.Login }}</p>
+        	       <p ng-if = "userDetails.User.NumberCredits == 1">{{ userDetails.User.NumberCredits }} credit beschikbaar</p> <!-- Toont 'credit' als er maar 1 is -->
+                   <p ng-if = "userDetails.User.NumberCredits != 1">{{ userDetails.User.NumberCredits }} credits beschikbaar</p> <!-- Toont 'credits' als er meerdere zijn -->
+                   <img src="img/board.png">
+               </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

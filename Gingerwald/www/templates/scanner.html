@@ -1,0 +1,12 @@
+<ion-view view-title="Scanner">
+    <ion-content class="padding">
+    	
+    	<button ng-click = "scanBarcode ()">Scan</button><br><br>
+
+    	<p>Bottle Token: {{ bottleToken }} | Juice Id: {{ juiceId }}</p><br>
+
+		<button id = "addButton" ng-click = "addShot ()" disabled>Add Shot</button><br>
+    	<button id = "cancelButton" ng-click = "cancelShot ()" disabled>Cancel</button>
+		
+    </ion-content>
+</ion-view>

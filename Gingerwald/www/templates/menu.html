@@ -13,43 +13,42 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
+    <!-- Uncomment dit als je titel wilt boven het menutje links
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Menu</h1>
+      <h1 class="title"></h1>
     </ion-header-bar>
+    -->
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
+         <ion-item menu-close href="#/app/login">
+          (temporary) Login
         </ion-item>
-        <ion-item menu-close href="#/app/search">
+         <ion-item menu-close href="#/app/profile">
           My profile
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          My dashboard
+        <ion-item menu-close href="#/app/dashboard">
+          My Dashboard
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Buy credits
+         <ion-item menu-close href="#/app/buy">
+          Buy Credits
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Scan bottle
+        <ion-item menu-close href="#/app/scanner">
+          Scan Bottle
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Juice of the day
+         <ion-item menu-close href="#/app/juicesoftheday">
+          Juices of the Day
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Invite someone
+         <ion-item menu-close href="#/app/invite">
+          Invite Someone
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
+         <ion-item menu-close href="#/app/gift">
           Gift
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
+         <ion-item menu-close href="#/app/vote">
           Vote
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Joke of the day
-        </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Log out
+         <ion-item menu-close href="#/app/jokeoftheday">
+          Joke of the Day
         </ion-item>
       </ion-list>
     </ion-content>

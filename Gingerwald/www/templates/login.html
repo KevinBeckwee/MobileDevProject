@@ -1,13 +1,24 @@
-<ion-view view-title="Login" name="login-view">
-  <ion-content class="padding">
-      <div class="list list-inset">
-          <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="data.username">
-          </label>
-          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
-          </label>
-      </div>
-      <button class="button button-block button-calm" ng-click="login()">Login</button>
-  </ion-content>
+<ion-view view-title="Login">
+    <ion-content class="padding">
+    	
+    	<form ng-submit="login ()">
+      		<div class="list">
+        		<label class="item item-input">
+          			<span class="input-label">Gebruikersnaam</span>
+          			<input type="text" ng-model="loginData.username">
+        		</label>
+        		<label class="item item-input">
+		          <span class="input-label">Wachtwoord</span>
+		          <input type="password" ng-model="loginData.password">
+        		</label>
+        		<label class="item">
+          			<button class="button button-block button-positive" type="submit">Log in</button>
+        		</label>
+            <label class="item">
+                <button class="button button-block button-positive" type="button">Registreren</button>
+            </label>
+      		</div>
+    	</form>
+		
+    </ion-content>
 </ion-view>
