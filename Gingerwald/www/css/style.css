@@ -3,7 +3,7 @@
 /*=============== FULL APP =====================*/
 
 ion-view {
-	background-image: url("/img/bos2.png");
+	background-image: url("img/bos2.png");
 	background-size: 100% 100%;
     /*background-repeat: no-repeat;*/
 }
@@ -134,7 +134,7 @@ h1 img {
 
 #graphbutton {
 	text-align: center;
-	margin-top: 20px; 
+	margin-top: 20px;
 }
 
 #graphbutton button {
