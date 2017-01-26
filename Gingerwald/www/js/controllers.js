@@ -134,12 +134,35 @@ angular.module('starter.controllers', [])
 
 			$scope.bottleDetails.then (function (data) {
 				$scope.juiceId = data.Bottle.JuiceID;
+				$scope.getIngredients ($scope.juiceId);
+				$scope.getNutrients ($scope.juiceId);
 			}, function (reason) {
 				$scope.bottleToken = "Ongeldige code!";
 			});
 
 		}, function (error) {
 			alert ("An error happened: " + error);
+		});
+	};
+
+	$scope.getIngredients = function (juiceId) {
+		$scope.juiceDetails = ScannerService.getJuiceIngredients ($scope.token, juiceId);
+
+		$scope.juiceDetails.then (function (data) {
+			$scope.ingredients = data;
+		}, function (reason) {
+			alert ("Failed to get ingredients " + reason + ".");
+		});
+	};
+
+	$scope.getNutrients = function (juiceId) {
+		$scope.juiceDetails = ScannerService.getJuiceNutrients ($scope.token, juiceId);
+
+		$scope.juiceDetails.then (function (data) {
+			$scope.nutrients = data;
+			console.log ($scope.nutrients);
+		}, function (reason) {
+			alert ("Failed to get nutrients " + reason + ".");
 		});
 	};
 

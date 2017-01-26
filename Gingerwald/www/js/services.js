@@ -1,5 +1,26 @@
 angular.module('starter.services', [])
 
+.service ('httpService', function ($http, $q) {
+	return {
+		postGetData : function (method, url) {
+			var deferred = $q.defer ();
+
+			$http({
+      			method: method,
+        		url: url
+        	})
+      		.success (function (data, status, headers, config) {
+        		deferred.resolve (data);
+		    })
+		    .error (function (data, status, headers, config) {
+		    	deferred.reject (status);
+		    });
+
+		    return deferred.promise;
+		}
+	}
+})
+
 .service ('UserService', function ($http, $q) {
 
 	var userToken = "VRYsLhjqom93MPPPcfeaWwmb8S3hwS7rImoqS3OOVthP4BFApUPT1wIsW2UmSiFO";
@@ -98,6 +119,46 @@ angular.module('starter.services', [])
 
 			return deferred.promise;
 		},
+
+		getJuiceIngredients : function (token, juiceId) {
+			var deferred = $q.defer ();
+			var url = 'https://www.gingerwald.com/community/v2.1/api/getJuiceIngredients.php?token=' + token + '&juice_id=' + juiceId;
+      		
+			/**/console.log ("Getting ingredients from juice with id " + juiceId + ".");
+
+      		$http({
+      			method: 'GET',
+        		url: url
+        	})
+      		.success (function (data, status, headers, config) {
+        		deferred.resolve (data);
+		    })
+		    .error (function (data, status, headers, config) {
+		    	deferred.reject (status);
+		    });
+
+			return deferred.promise;
+		},
+
+		getJuiceNutrients : function (token, juiceId) {
+			var deferred = $q.defer ();
+			var url = 'https://www.gingerwald.com/community/v2.1/api/getJuiceNutrients.php?token=' + token + '&juice_id=' + juiceId;
+      		
+			/**/console.log ("Getting nutrients from juice with id " + juiceId + ".");
+
+      		$http({
+      			method: 'GET',
+        		url: url
+        	})
+      		.success (function (data, status, headers, config) {
+        		deferred.resolve (data);
+		    })
+		    .error (function (data, status, headers, config) {
+		    	deferred.reject (status);
+		    });
+
+			return deferred.promise;
+		}
 	}
 })
 
@@ -106,6 +167,7 @@ angular.module('starter.services', [])
 	return {
 		getDashboard : function (token, dateFrom, dateTo) {
 			var deferred = $q.defer ();
+			var method = 'GET';
 			var url = 'https://www.gingerwald.com/community/v2.1/api/getUserDashboard.php?token=' + token + '&report_from=' + dateFrom + '&report_to=' + dateTo;
       		
 			/**/console.log ("Getting data from " + dateFrom + " to " + dateTo + ".");
