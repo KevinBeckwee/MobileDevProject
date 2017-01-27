@@ -181,42 +181,43 @@ h1 img {
 
 /*Scanner CSS */
 
-#scanButton{
-width: 30%;
-position: relative;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-margin-right: 20%;
-background-image: url("../img/chalk.jpeg");
+#qrImage{
+	opacity: 0.5;
 }
+
 
 #cancelButton{
 	margin-right : 10%;
 	font-size: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
+	background-color: #808080;
+	color: #FFFFFF;
+	width: 250px;
+	height: 40px;
 
 }
 
 #scannerButtons{
 	width: 80%;
-
 	text-align: center;
-	white-space: pre-wrap;
+	white-space: pre-line;
 	margin-left: 10%;
 	font-size: 200%;
-	color: #FFFFFF;
+	color: #7ca711;
 	background-image: url("../img/chalk.jpeg");
+	font-family: sans-serif;
+
 }
 
 #addButton{
 	margin-top: 7%;
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
-
-	#qrImage{}
-
-
-
+	background-color: #BB061B;
+  color: #FFFFFF;
+	width: 250px;
+	height: 40px;
 }
