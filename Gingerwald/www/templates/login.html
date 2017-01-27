@@ -1,21 +1,21 @@
 <ion-view view-title="Login">
     <ion-content class="padding">
     	
-    	<form ng-submit="login ()">
+    	<form ng-submit="login ()" id = "loginButtons">
       		<div class="list">
-        		<label class="item item-input">
-          			<span class="input-label">Gebruikersnaam</span>
+        		<label>
+          			<span >Gebruikersnaam</span>
           			<input type="text" ng-model="loginData.username">
         		</label>
-        		<label class="item item-input">
-		          <span class="input-label">Wachtwoord</span>
+        		<label>
+		          <span ">Wachtwoord</span>
 		          <input type="password" ng-model="loginData.password">
         		</label>
-        		<label class="item">
-          			<button class="button button-block button-positive" type="submit">Log in</button>
+        		<label>
+          			<button id = "loginButton" class="button button-assertive" type="submit">Log in</button>
         		</label>
-            <label class="item">
-                <button class="button button-block button-positive" type="button">Registreren</button>
+            <label>
+                <button id = "registerButton" class="button button-assertive" type="button">Registreren</button>
             </label>
       		</div>
     	</form>

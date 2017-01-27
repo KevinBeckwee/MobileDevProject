@@ -178,13 +178,12 @@ h1 img {
 	max-width: 98%;
 }
 
-/*Scanner CSS */
+/*============= SCANNER & LOGIN ===============*/
 
 #qrImage {
 	opacity: 0.5;
 	width: 40%;
 }
-
 
 #cancelButton{
 	font-size: 80%;
@@ -194,11 +193,10 @@ h1 img {
 	background-color: #808080;
 	color: #FFFFFF;
 	width: 250px;
-	height: 40px;
-
+	height: 40px
 }
 
-#scannerButtons{
+#scannerButtons, #loginButtons {
 	width: 90%;
 	text-align: center;
 	white-space: pre-line;
@@ -212,7 +210,7 @@ h1 img {
 	border-color: #C86D24;
 }
 
-#addButton{
+#addButton, #loginButton, #registerButton {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -220,4 +218,26 @@ h1 img {
 	color: #FFFFFF;
 	width: 250px;
 	height: 40px;
+}
+
+.list {
+	color: red;
+}
+
+#loginButtons span {
+	font-size: 150%;
+	color: #7ca711;
+}
+
+#loginButtons input {
+	width: 80%;
+	padding: .5rem;
+	margin: auto;
+	font-size: 80%;
+	background-color: rgba(89, 89, 89, 0.80);
+	border-radius: 2px;
+	color: #e2e2e2;
+	border: 0;
+	letter-spacing: 1px;
+	font-weight: bold;
 }
